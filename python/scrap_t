@@ -1,0 +1,20 @@
+
+        # Get  rotation matrix based on the passed attitude
+        R = euler2RM(attitude[0], attitude[1], attitude[2])
+        c_d = thrust_cmd / DRONE_MASS_KG
+
+        if thrust_cmd > 0.0:
+            acceleration_norm_p = -min(max(acceleration_cmd[0].item() / c_d, -1.0), 1.0)
+            acceleration_norm_q= -min(max(acceleration_cmd[1].item() / c_d, -1.0), 1.0)
+
+            p_cmd = (1 / R[2, 2]) * (-R[1, 0] * self.Kp_gain_roll * (R[0, 2] - acceleration_norm_p) +  R[0, 0] * self.Kp_gain_pitch * (R[1, 2] - acceleration_norm_p))
+
+            q_cmd = (1 / R[2, 2]) * (-R[1, 1] * self.Kp_gain_pitch * (R[0, 2] - acceleration_norm_q) + R[0, 1] * self.Kp_gain_pitch * (R[1, 2] - acceleration_norm_q))
+
+
+        else:
+            # if thrust < 0.0  set 0.0  p and q  rate
+            p_cmd = 0.0
+            q_cmd = 0.0
+            thrust_cmd = 0.0
+        return np.array([p_cmd, q_cmd])

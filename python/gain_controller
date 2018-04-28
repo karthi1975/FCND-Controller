@@ -1,0 +1,54 @@
+z_k_p=10.0,
+z_k_d=15.0,
+x_k_p=0.0,
+x_k_d=0.0,
+y_k_p=0.0,
+y_k_d=0.0,
+k_p_roll=0.7,
+k_p_pitch=0.8,
+k_p_yaw=0.9,
+k_p_p=0.5,
+k_p_q=0.5,
+k_p_r=0.5
+
+
+
+z_k_p=10.0,
+z_k_d=10.0,
+x_k_p=5.0,
+x_k_d=7.0,
+y_k_p=5.0,
+y_k_d=7.0,
+k_p_roll=0.7,
+k_p_pitch=0.8,
+k_p_yaw=0.6,
+k_p_p=0.5,
+k_p_q=0.5,
+k_p_r=0.5
+
+
+τxτyτz=(F1+F4−F2−F3)l=(F1+F2−F3−F4)l=τ1+τ2+τ3+τ4
+τx=(F1+F4−F2−F3)l
+τy=(F1+F2−F3−F4)l
+τz=τ1+τ2+τ3+τ4
+
+
+
+
+Kp_pos=8.5,  # 12.0, 6
+Kp_vel=5.5,  # 8.0, 4
+Kp_alt=4.0,
+Kp_hdot=2.0,
+
+Kp_roll=6.5,  # 6.5, 8
+Kp_pitch=6.5,  # 6.5, 8
+Kp_yaw=4.5,  # 4.5
+
+Kp_p=21,  # 10, 20
+Kp_q=21,  # 10, 20
+Kp_r=16,
+
+max_tilt=0.5,
+max_ascent_rate=5,
+max_descent_rate=2,
+max_speed=5.0
